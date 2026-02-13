@@ -1,8 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import image from '../assets/logo.png'
 
 const NewsItem = ({title, description, src, url}) => {
   const [imgSrc, setImgSrc] = useState(src || image);
+  
+  useEffect(() => {
+    setImgSrc(src || image);
+  }, [src]);
   
   if(!title || !description) return null;
   
