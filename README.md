@@ -26,7 +26,7 @@ A modern, responsive news aggregation platform built with React and Vite. Browse
 | **Category Filtering** | Browse news by Technology, Health, Science, Entertainment, Sports |
 | **Search Functionality** | Search for news on any topic using the search bar |
 | **Responsive Design** | Works seamlessly on desktop, tablet, and mobile devices |
-| **Real-time Updates** | Fetches latest news from NewsAPI |
+| **Real-time Updates** | Fetches latest news from NewsData.io |
 | **Image Fallback** | Displays placeholder images for articles without images |
 | **Smooth Animations** | Hover effects and card lift animations |
 | **Dark Theme** | Modern dark interface for comfortable reading |
@@ -42,14 +42,14 @@ A modern, responsive news aggregation platform built with React and Vite. Browse
 | React 18 | UI Library |
 | Vite | Build Tool & Dev Server |
 | Bootstrap 5 | CSS Framework |
-| NewsAPI | News Data Source |
+| NewsData.io | News Data Source |
 | JavaScript ES6+ | Programming Language |
 
 ### Prerequisites
 
 - Node.js v14 or higher
 - npm or yarn
-- NewsAPI key (free from [newsapi.org](https://newsapi.org))
+- NewsData.io API key (free from [newsdata.io](https://newsdata.io))
 
 ---
 
@@ -79,7 +79,7 @@ A modern, responsive news aggregation platform built with React and Vite. Browse
         └──────────┼──────────┐
                    │          │
             ┌──────▼──────┐   │
-            │  NewsAPI    │   │
+            │  NewsData.io│   │
             │  Endpoint   │   │
             └─────────────┘   │
                               │
@@ -132,7 +132,7 @@ NEWS-React/
 3. **Set up environment variables**
    - Create `.env` file in root directory
    - Add: `VITE_NEWS_API_KEY=your_api_key_here`
-   - Get free API key from [newsapi.org](https://newsapi.org)
+   - Get free API key from [newsdata.io](https://newsdata.io)
 
 4. **Start development server**
    ```bash
@@ -187,7 +187,7 @@ const searchInputRef = useRef(null);
 **NewsBoard.jsx** - Fetches data with useEffect
 ```javascript
 useEffect(() => {
-  // API call to NewsAPI
+  // API call to NewsData.io
 }, [category, searchQuery]);
 ```
 
@@ -237,7 +237,6 @@ useEffect(() => {
 
 | Issue | Status | Workaround |
 |-------|--------|-----------|
-| NewsAPI free tier limited on localhost | Open | Use production deployment or paid tier |
 | Some articles missing images | Open | App shows fallback logo automatically |
 | Search results may be limited | Open | Try more specific search terms |
 | Mobile navbar collapse on search | Open | Manually close navbar after search |
